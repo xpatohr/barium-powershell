@@ -26,7 +26,7 @@ $settings  =  @{
     Uri  =  'https://live.barium.se/api/v1.0'
     UserName = 'uu@domain.se'
     Password = 'pwd1'
-    ApiKey = '[guid]'
+    ApiKey = '23ee1328-fc60-4889-8c87-020391a3b112'
 }
 ```
 
