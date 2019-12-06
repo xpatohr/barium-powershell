@@ -24,13 +24,16 @@ Import-Module .\Barium.psm1
 
 $settings  =  @{
     Uri  =  'https://live.barium.se/api/v1.0'
+    UserName = 'uu@domain.se'
+    Password = 'pwd1'
+    ApiKey = '[guid]'
 }
 ```
 
 #### Create authentication and recive a token
 
 ```powershell
-$token = Get-BariumToken -Uri $settings.Uri -UserName 'uu@domain.se' -ApiKey '2a699363-f2b7-4ebf-8fe1-82b9ab7062bf' -Password 'pw1'
+$token = Get-BariumToken -Uri $settings.Uri -UserName $settings.UserName -ApiKey $settings.ApiKey -Password $settings.Password
 ```
 
 #### Fetch list
