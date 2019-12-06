@@ -64,7 +64,7 @@ $object.Data | Select-Object Name, Value
 
 This will return the current values, etc `samAccountName: user1`
 
-#### Update 'SamAccountName' and 'Password' to Barium
+#### Update 'SamAccountName' and 'Password' to Barium list 'Hello World'
 
 ```powershell
 $values = @{
