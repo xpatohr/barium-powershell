@@ -50,7 +50,7 @@ Or you can use this row to fetch all lists.
 $list = Get-BariumList -Uri $settings.Uri -Token $token
 ```
 
-#### Get listobjects from the selected list
+#### Get listobjects from the selected list 'Hello World'
 
 ```powershell
 $object = Get-BariumObject -Uri $settings.Uri -Token $token -List $list.'form.formId'
