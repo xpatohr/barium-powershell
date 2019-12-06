@@ -78,9 +78,3 @@ This item above wants to update 'samAccountName' and 'Password' with new values.
 ```powershell
 Edit-BariumObject -Uri $settings.Uri -Token $token -List $list.'form.formId' -Values $values
 ```
-
-## License
-
-This project is licensed under the MIT.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
