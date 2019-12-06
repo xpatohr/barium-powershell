@@ -22,7 +22,7 @@ PowerShell module to integrate with Barium API.
 ```powershell
 Import-Module .\Barium.psm1
 
-$settings  =  @{
+$configuration  =  @{
     Uri  =  'https://live.barium.se/api/v1.0'
     UserName = 'uu@domain.se'
     Password = 'pwd1'
@@ -33,7 +33,7 @@ $settings  =  @{
 #### Create authentication and recive a token
 
 ```powershell
-$token = Get-BariumToken -Uri $settings.Uri -UserName $settings.UserName -ApiKey $settings.ApiKey -Password $settings.Password
+$token = Get-BariumToken @configuration
 ```
 
 #### Fetch list
