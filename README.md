@@ -22,18 +22,15 @@ PowerShell module to integrate with Barium API.
 ```powershell
 Import-Module .\Barium.psm1
 
-$configuration  =  @{
-    Uri  =  'https://domain.se/api/v1.0'
-    UserName = 'uu@domain.se'
-    Password = 'pwd1'
-    ApiKey = '23ee1328-fc60-4889-8c87-020391a3b112'
+$settings  =  @{
+    Uri  =  'https://live.barium.se/api/v1.0'
 }
 ```
 
 #### Create authentication and recive a token
 
 ```powershell
-$token = Get-BariumToken @configuration
+$token = Get-BariumToken -Uri $settings.Uri -UserName 'uu@domain.se' -ApiKey '2a699363-f2b7-4ebf-8fe1-82b9ab7062bf' -Password 'pw1'
 ```
 
 #### Fetch list
@@ -50,7 +47,7 @@ Or you can use this row to fetch all lists.
 $list = Get-BariumList -Uri $settings.Uri -Token $token
 ```
 
-#### Get listobjects from the selected list 'Hello World'
+#### Get listobjects from the selected list
 
 ```powershell
 $object = Get-BariumObject -Uri $settings.Uri -Token $token -List $list.'form.formId'
@@ -64,7 +61,7 @@ $object.Data | Select-Object Name, Value
 
 This will return the current values, etc `samAccountName: user1`
 
-#### Update 'SamAccountName' and 'Password' to Barium list 'Hello World'
+#### Update 'SamAccountName' and 'Password' to Barium
 
 ```powershell
 $values = @{
@@ -78,3 +75,9 @@ This item above wants to update 'samAccountName' and 'Password' with new values.
 ```powershell
 Edit-BariumObject -Uri $settings.Uri -Token $token -List $list.'form.formId' -Values $values
 ```
+
+## License
+
+This project is licensed under the MIT.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)

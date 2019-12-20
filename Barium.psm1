@@ -283,4 +283,70 @@ function Edit-BariumObject {
 
 }
 
-Export-ModuleMember -Function Get-BariumToken, Get-BariumList, Get-BariumObject, Edit-BariumObject
+function Set-BariumInstance {
+
+    <#
+
+    .SYNOPSIS
+    Set status on Barium instance
+
+    .DESCRIPTION
+    Instances and instance metadata
+
+    .PARAMETER Token
+    Token for authentication.
+
+    .PARAMETER Uri
+    Uri for connect to the Barium API.
+
+    .PARAMETER Object
+    Id for the object.
+
+    .PARAMETER Values
+    Hashtable contain fields and values to edit..
+
+    .OUTPUTS
+    System.String
+
+    .EXAMPLE
+    PS> Set-BariumInstance -Uri 'https://live.barium.se/api/v1.0' -Object '6fb70a0b-8cf8-44af-bd53-bb16c4f64ab1' -Token $token -Values @{ 'Message' = 'SUCCESS' }
+
+    #>
+
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory = $true, Position = 0, HelpMessage = "Token for authentication.")]
+        [string]$Token,
+        [Parameter(Mandatory = $true, Position = 1, HelpMessage = "Uri for connect to the Barium API.")]
+        [string]$Uri,
+        [Parameter(Mandatory = $true, Position = 2, HelpMessage = "Id for the list.")]
+        [string]$Object,
+        [Parameter(Mandatory = $true, Position = 3, HelpMessage = "Hashtable contain fields and values to edit.")]
+        [object]$Values
+    )
+
+    $parameters = @{
+        Uri     = "{0}/Instances/{1}" -f $Uri, $Object
+        Headers = @{ 'ticket' = $token }
+        Method  = 'POST'
+        Body    = $values
+    }
+
+    try {
+
+        $content = Invoke-RestMethod @parameters -ErrorAction Stop
+
+        return $content
+
+    }
+
+    catch {
+
+        Write-Error $_
+
+    }
+
+}
+
+
+Export-ModuleMember -Function Get-BariumToken, Get-BariumList, Get-BariumObject, Edit-BariumObject, Set-BariumInstance
