@@ -59,7 +59,7 @@ $object = Get-BariumObject -Uri $settings.Uri -Token $token -List $list.'form.fo
 $object.Data | Select-Object Name, Value
 ```
 
-This will return the current values, etc `samAccountName: user1`
+This will return the current values, etc `samAccountName: user1` from the list.
 
 #### Update 'SamAccountName' and 'Password' to Barium
 
