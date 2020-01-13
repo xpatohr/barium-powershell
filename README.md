@@ -70,7 +70,7 @@ $values = @{
 }
 ```
 
-This item above wants to update 'samAccountName' and 'Password' with new values.
+This item above updates 'samAccountName' and 'Password' with new values.
 
 ```powershell
 Edit-BariumObject -Uri $settings.Uri -Token $token -List $list.'form.formId' -Values $values
