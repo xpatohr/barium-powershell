@@ -1,6 +1,6 @@
-# PowerShell integration with Barium API
+# Barium Live PowerShell integration
 
-PowerShell module to integrate with Barium API.
+PowerShell module to integrate with Barium Live API.
 
 ## Requirements
 
