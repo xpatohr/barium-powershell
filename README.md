@@ -78,6 +78,6 @@ Edit-BariumObject -Uri $settings.Uri -Token $token -List $list.'form.formId' -Va
 
 ## License
 
-This project is licensed under the MIT.
+This project is licensed under the Apache 2.0 License.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
