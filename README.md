@@ -75,9 +75,3 @@ This item above updates 'samAccountName' and 'Password' with new values.
 ```powershell
 Edit-BariumObject -Uri $settings.Uri -Token $token -List $list.'form.formId' -Values $values
 ```
-
-## License
-
-This project is licensed under the Apache 2.0 License.
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
